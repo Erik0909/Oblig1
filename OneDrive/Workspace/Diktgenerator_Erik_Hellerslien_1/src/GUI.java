@@ -7,6 +7,20 @@ public class GUI {
 		private final int LDIKT = 0;
 		private final int ADIKT = 1;
 		private final int AVSLUTT = 2;
+		
+		private final int LETTREG = 0;
+		private final int LETTSKRIV = 1;
+		private final int LETTRETURN = 2;
+		
+		private final int AVANSERTREG = 0;
+		private final int AVANSERTSKRIV = 1;
+		private final int AVANSERTRETURN = 2;
+		
+		private final int ADJEKTIVAREG = 0;
+		private final int VERBAREG = 1;
+		private final int ARTIKKELAREG = 2;
+		private final int SUBSTANTIVAREG = 3;
+		
 		private String lettord;
 		private String adjektivOrd;
 		private String artikkelOrd;
@@ -34,15 +48,15 @@ public class GUI {
 		
 		
 		public void LettDikt() {
-			final String[] LALTERNATIVER = {"Registrer Ord", "Skriv Dikt", "Avslutt"};
+			final String[] LALTERNATIVER = {"Registrer Ord", "Skriv Dikt", "Tilbake"};
 			int lDiktOptions = CreateOptionPane(LALTERNATIVER);
 			
 			switch(lDiktOptions) {
-				case 0: lettDiktReg();
+				case LETTREG: lettDiktReg();
 					break;
-				case 1: skrivLettOrd();
+				case LETTSKRIV: skrivLettOrd();
 					break;
-				case 2: meny();
+				case LETTRETURN: meny();
 					break;
 				default: fortsett = false;
 			}
@@ -57,11 +71,11 @@ public class GUI {
 			int aDiktOptions = CreateOptionPane(AALTERNATIVER);
 				
 			switch(aDiktOptions) {
-				case 0: avansertDiktReg();
+				case AVANSERTREG: avansertDiktReg();
 					break;
-				case 1: avansertDiktSkriv();
+				case AVANSERTSKRIV: avansertDiktSkriv();
 					break;
-				case 2: meny();
+				case AVANSERTRETURN: meny();
 					break;
 				default: fortsett = false;
 			
@@ -73,13 +87,13 @@ public class GUI {
 			int ordAlternativer = CreateOptionPane(ORDALTERNATIVER);
 			
 			switch(ordAlternativer) {
-				case 0: adjektivReg();					
+				case ADJEKTIVAREG: adjektivReg();					
 					break;
-				case 1: verbReg();
+				case VERBAREG: verbReg();
 					break;
-				case 2: artikkelReg();
+				case ARTIKKELAREG: artikkelReg();
 					break;
-				case 3: substantivReg();
+				case SUBSTANTIVAREG: substantivReg();
 					break;
 				
 				default: fortsett = false;
